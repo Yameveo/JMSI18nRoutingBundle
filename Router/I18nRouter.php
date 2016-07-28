@@ -39,6 +39,7 @@ class I18nRouter extends Router
     private $i18nLoaderId;
     private $container;
     private $defaultLocale;
+    private $rootLocales;
     private $redirectToHost = true;
     private $localeResolver;
 
@@ -92,6 +93,16 @@ class I18nRouter extends Router
     public function setDefaultLocale($locale)
     {
         $this->defaultLocale = $locale;
+    }
+
+    /**
+     * Sets all the locales which there is no prefix
+     *
+     * @param array $locales
+     */
+    public function setRootLocales($locales)
+    {
+        $this->rootLocales = $locales;
     }
 
     /**
